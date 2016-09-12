@@ -1,8 +1,15 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.slides-navigation a.next{
+  right:20px;
+}
+
+.slides-navigation a.prev{
+  left:20px;
 }
