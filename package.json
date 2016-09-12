@@ -19,6 +19,7 @@
     "mongo-express": "^0.31.2",
     "mongoose": "^4.6.0",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "swig": "^1.4.2"
   }
 }

@@ -23,8 +23,14 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 // view engine setup
+var swig = require('swig');
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+app.set('view cache', false);
+swig.setDefaults({
+  cache: false
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
