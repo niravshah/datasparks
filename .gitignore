@@ -1,1 +1,5 @@
 node_modules
+
+# Config File
+config.js
+me_config.js

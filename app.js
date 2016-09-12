@@ -1,14 +1,26 @@
+var env = process.env.NODE_ENV || 'dev';
+var config = require('./config')[env];
+console.log("ENV:", env);
+
 var express = require('express');
+var app = express();
+
+var mongoose = require('mongoose');
+mongoose.connect(config.mongoUrl);
+
+var me_config = require('./me_config')[env];
+var mongo_express = require('mongo-express/lib/middleware');
+app.use('/mongo_express', mongo_express(me_config.mongo_express_config));
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
 var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
-var app = express();
+var users = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
